@@ -54,29 +54,36 @@ class Calculator(tk.Tk):
 
         # Define the buttons in a list of tuples
         buttons = [
-            ('7', '8', '9', '/'),
-            ('4', '5', '6', '*'),
-            ('1', '2', '3', '-'),
-            ('0', '.', '=', '+')
+
+            ('(',')', 'AC', 'ANS'),
+            ('7','8','9','/'),
+            ('4','5', '6', '*'),
+            ('1','2','3','-'),
+            ('0','.', '=','+')
+
         ]
 
         # AC and ANS buttons
-        tk.Button(button_frame, text='AC', font=("Arial", 18), command=self.clear_entry).grid(row=0, column=4, sticky='news', padx=5, pady=5)
-        tk.Button(button_frame, text='ANS', font=("Arial", 18), command=self.insert_last_result).grid(row=1, column=4, sticky='news', padx=5, pady=5)
+        tk.Button(button_frame, text='AC', font=("Arial", 18), command=self.clear_entry).grid(row=0, column=2, sticky='news', padx=5, pady=5)
+        tk.Button(button_frame, text='ANS', font=("Arial", 18), command=self.insert_last_result).grid(row=0, column=3, sticky='news', padx=5, pady=5)
 
         
 
-        # Create the buttons and assign their commands
+# Create the buttons and assign their commands
         for i, row in enumerate(buttons):
             for j, button in enumerate(row):
                 if button == '=':
                     tk.Button(button_frame, text=button, font=("Arial", 18), command=self.calculate).grid(row=i, column=j, sticky='news', padx=5, pady=5)
+                elif button == 'AC':
+                    tk.Button(button_frame, text=button, font=("Arial", 18), command=self.clear_entry).grid(row=i, column=j, sticky='news', padx=5, pady=5)
+                elif button == 'ANS':
+                    tk.Button(button_frame, text=button, font=("Arial", 18), command=self.insert_last_result).grid(row=i, column=j, sticky='news', padx=5, pady=5)
                 else:
                     tk.Button(button_frame, text=button, font=("Arial", 18), command=lambda button=button: self.append_char(button)).grid(row=i, column=j, sticky='news', padx=5, pady=5)
 
         # Configure the row and column weights of the button frame
         button_frame.rowconfigure((0, 1, 2, 3), weight=1)
-        button_frame.columnconfigure((0, 1, 2, 3, 4), weight=1)
+        button_frame.columnconfigure((0, 1, 2, 3, 4, 5), weight=1)
 
     def clear_entry(self):
         self.result_var.set("")
