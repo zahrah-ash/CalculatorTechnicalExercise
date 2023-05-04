@@ -13,7 +13,17 @@ To clone and run this code, follow these steps:
 - Type "main.py" to run the application
 - The calculator app should now be running and ready to use.
 
-## Requirements
+## Improvements to make
+- Make the ANS button work 100% of the time
+- Code organisation.
+  * Seperate the code into multiple files to improve maintainability.
+- Better error handling.
+  * More specific error messages.
+- Styling and layout.
+  * Make it more visually appealing with different fonts, colours and styles.
+- More complex features.
+
+## App Requirements
 
 |Requirement|Type|Implemented?|Test number|
 |-----------|----|------------|-----------|
