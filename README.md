@@ -15,6 +15,7 @@ To clone and run this code, follow these steps:
 
 ## Improvements to make
 - Make the ANS button work 100% of the time
+- Make the menu not open extra windows
 - Code organisation.
   * Seperate the code into multiple files to improve maintainability.
 - Better error handling.
