@@ -1,5 +1,5 @@
 # CalculatorTechnicalExercise
-Technical exercise for Raytheon
+Technical exercise for Interview
 
 ## Introduction
 This app is supposed to be a calculator application that can be extended by other people in the future
